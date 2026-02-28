@@ -164,5 +164,49 @@ namespace MathLib
                 throw new ArgumentException("Value cannot be Infinity.", paramName);
         }
 
+        /// <summary>
+        /// Calculates the area of a circle given its radius.
+        /// </summary>
+        /// <param name="radius">Radius of the circle (must be non-negative).</param>
+        /// <returns>Area of the circle.</returns>
+        public static double CircleArea(double radius)
+        {
+            if (radius < 0)
+                throw new ArgumentOutOfRangeException(nameof(radius), "Radius cannot be negative.");
+
+            return Math.PI * radius * radius;
+        }
+
+        /// <summary>
+        /// Converts Celsius to Fahrenheit.
+        /// </summary>
+        public static double CelsiusToFahrenheit(double celsius)
+        {
+            ValidateDouble(celsius, nameof(celsius));
+            return (celsius * 9 / 5) + 32;
+        }
+
+        /// <summary>
+        /// Converts Fahrenheit to Celsius.
+        /// </summary>
+        public static double FahrenheitToCelsius(double fahrenheit)
+        {
+            ValidateDouble(fahrenheit, nameof(fahrenheit));
+            return (fahrenheit - 32) * 5 / 9;
+        }
+
+        /// <summary>
+        /// Calculates the hypotenuse of a right triangle given sides a and b.
+        /// </summary>
+        public static double Hypotenuse(double a, double b)
+        {
+            ValidateDouble(a, nameof(a));
+            ValidateDouble(b, nameof(b));
+
+            if (a < 0 || b < 0)
+                throw new ArgumentOutOfRangeException("Triangle sides cannot be negative.");
+
+            return Math.Sqrt(a * a + b * b);
+        }
     }
 }
