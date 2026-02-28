@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ClassLibrary1/MathLib.csproj" />
+  <Project Path="ConsoleApp1/MathLib.Client.csproj" />
+</Solution>
