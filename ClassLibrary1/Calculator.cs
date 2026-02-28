@@ -98,7 +98,7 @@ namespace MathLib
                 throw new ArgumentOutOfRangeException(nameof(n),
                     "Factorial is defined only for non-negative integers.");
 
-            if (n > 12) // 13! exceeds Int32
+            if (n > 12)
                 throw new OverflowException(
                     "Factorial result exceeds Int32 range.");
 
@@ -183,7 +183,8 @@ namespace MathLib
         public static double CelsiusToFahrenheit(double celsius)
         {
             ValidateDouble(celsius, nameof(celsius));
-            return (celsius * 9 / 5) + 32;
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            return fahrenheit;
         }
 
         /// <summary>
